@@ -10,8 +10,6 @@ ShopAnythingLagos (SAL) is a Saas company that provides a platform for merchants
 - [Usage](#usage)
   - [API Endpoints](#api-endpoints)
 - [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Getting Started
 
@@ -24,5 +22,47 @@ ShopAnythingLagos (SAL) is a Saas company that provides a platform for merchants
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/LontraX/ShopAnythingLagos.git)https://github.com/LontraX/ShopAnythingLagos.git
 cd your-repo
+go run main.go
+```
+- The application should now be running on http://localhost:8080.
+
+
+## Usage
+### API Endpoints
+
+- GET /products
+
+  Retrieve all products listed by a merchant.
+  Example:
+  ```
+  curl -X GET -H "Merchant-ID: your-merchant-id" http://localhost:8080/products
+  ```
+
+- POST /products/create
+
+  Create a new product for a merchant.
+  Example:
+  ```
+  curl -X POST -H "Merchant-ID: your-merchant-id" -H "Content-Type: application/json" -d '{"name": "Product Name", "description": "Product Description", "price": 19.99}' http://localhost:8080/products/create
+  ```
+
+- PUT /products/edit
+
+  Edit an existing product for a merchant.
+  Example:
+  ```
+  curl -X PUT -H "Merchant-ID: your-merchant-id" -H "Content-Type: application/json" -d '{"sku_id": "product-sku", "name": "Updated Name", "description": "Updated Description", "price": 29.99}'         http://localhost:8080/products/edit
+  ```
+- DELETE /products/delete
+  Delete an existing product for a merchant.
+  Example:
+  ```
+  curl -X DELETE -H "Merchant-ID: your-merchant-id" http://localhost:8080/products/delete?sku_id=product-sku
+  ```
+
+  ## Testing
+
+
+
