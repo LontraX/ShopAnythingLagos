@@ -22,7 +22,7 @@ ShopAnythingLagos (SAL) is a Saas company that provides a platform for merchants
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/LontraX/ShopAnythingLagos.git)https://github.com/LontraX/ShopAnythingLagos.git
+git clone https://github.com/LontraX/ShopAnythingLagos.git
 cd your-repo
 go run main.go
 ```
