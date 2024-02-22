@@ -62,7 +62,13 @@ go run main.go
   curl -X DELETE -H "Merchant-ID: your-merchant-id" http://localhost:8080/products/delete?sku_id=product-sku
   ```
 
-  ## Testing
+## Testing
+Run tests using the following command (API needs to be running):
+```
+go test ./...
+```
+
+
 
 
 
