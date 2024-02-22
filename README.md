@@ -45,7 +45,7 @@ go run main.go
   Create a new product for a merchant.
   Example:
   ```
-  curl -X POST -H "Merchant-ID: your-merchant-id" -H "Content-Type: application/json" -d '{"name": "Product Name", "description": "Product Description", "price": 19.99}' http://localhost:8080/products/create
+  curl -X POST -H "Merchant-ID: your-merchant-id" -H "Content-Type: application/json" -d '{"sku_id": "product-sku","name": "Product Name", "description": "Product Description", "price": 19.99}' http://localhost:8080/products/create
   ```
 
 - PUT /products/edit
