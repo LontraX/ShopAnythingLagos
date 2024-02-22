@@ -3,8 +3,6 @@ package models
 import (
 	"fmt"
 	"time"
-
-	"github.com/google/uuid"
 )
 
 // MerchantProductStore holds the products for each merchant
@@ -24,10 +22,12 @@ type Product struct {
 	Description string    `json:"description"`
 	Price       float64   `json:"price"`
 	DateAdded   time.Time `json:"date_added"`
+	DateUpdated time.Time `json:"date_updated"`
 }
 
 // ProductAddDTO represents the data transfer object for adding a product
 type ProductAddDTO struct {
+	SKUID       string  `json:"sku_id"`
 	Name        string  `json:"name"`
 	Description string  `json:"description"`
 	Price       float64 `json:"price"`
@@ -59,7 +59,7 @@ func (p *Product) AddProductForMerchant(merchantID string, productDTO ProductAdd
 	}
 
 	newProduct := Product{
-		SKUID:       generateSKU(),
+		SKUID:       productDTO.SKUID,
 		Name:        productDTO.Name,
 		Description: productDTO.Description,
 		Price:       productDTO.Price,
@@ -122,9 +122,4 @@ func (p *Product) findProductIndex(merchantID, skuID string) int {
 		}
 	}
 	return -1
-}
-
-// generateSKU generates a unique SKU ID for a product
-func generateSKU() string {
-	return uuid.New().String()
 }
